@@ -1,0 +1,55 @@
+---
+const verticals = [
+  { name: 'Journal', url: 'https://blog.gladial.com', description: 'Notes, ideas, and engineering stories.' },
+  { name: 'Labs', url: 'https://labs.gladial.com', description: 'Open source projects, experiments, and demos.' },
+  { name: 'Audio', url: 'https://audio.gladial.com', description: 'Audio projects and explorations.' },
+  { name: 'Novels', url: 'https://novels.gladial.com', description: 'Fiction and long-form storytelling.' },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Gladial is a personally owned collective for open source projects, writing, audio, and fiction." />
+    <title>Gladial — A creative collective</title>
+  </head>
+  <body>
+    <main>
+      <header><span class="mark">G</span><span>GLADIAL</span></header>
+      <section class="intro">
+        <p class="eyebrow">INDEPENDENTLY BUILT · OPEN TO THE WORLD</p>
+        <h1>A home for things<br />made with curiosity.</h1>
+        <p class="lede">Gladial is a personally owned collective for open source projects, experiments, writing, audio, and stories.</p>
+      </section>
+      <section class="grid" aria-label="Explore Gladial">
+        {verticals.map((item) => (
+          <a class="card" href={item.url}>
+            <span class="card-title">{item.name}<span aria-hidden="true">↗</span></span>
+            <span class="card-description">{item.description}</span>
+          </a>
+        ))}
+      </section>
+      <footer><span>Made independently by Gladial.</span><a href="https://github.com/teamgladial">GitHub ↗</a></footer>
+    </main>
+  </body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) { margin: 0; background: #f7f6f2; color: #24231f; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { width: min(900px, calc(100% - 48px)); margin: 0 auto; }
+  header { display: flex; align-items: center; gap: 12px; padding: 28px 0; color: #5e5b53; font-size: 12px; font-weight: 700; letter-spacing: .16em; }
+  .mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: #25241f; color: #f7f6f2; font-family: Georgia, serif; font-size: 18px; letter-spacing: 0; }
+  .intro { padding: clamp(70px, 14vh, 140px) 0 64px; }
+  .eyebrow { color: #817d73; font-size: 11px; letter-spacing: .15em; }
+  h1 { margin: 30px 0 22px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 8vw, 82px); font-weight: 400; letter-spacing: -.055em; line-height: .98; }
+  .lede { max-width: 570px; color: #69665e; font-size: 18px; line-height: 1.7; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .card { min-height: 150px; padding: 24px; border: 1px solid #e3e0d8; border-radius: 12px; color: inherit; text-decoration: none; transition: background .15s ease, border-color .15s ease; }
+  .card:hover { background: #fff; border-color: #c9c5ba; }
+  .card-title { display: flex; justify-content: space-between; font-size: 19px; font-weight: 600; }
+  .card-title span { color: #89857b; }
+  .card-description { display: block; max-width: 300px; margin-top: 14px; color: #77736b; font-size: 14px; line-height: 1.6; }
+  footer { display: flex; justify-content: space-between; margin: 72px 0 30px; padding-top: 20px; border-top: 1px solid #e3e0d8; color: #827e75; font-size: 13px; }
+  footer a { color: inherit; text-decoration: none; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .card { min-height: 125px; } }
+</style>
