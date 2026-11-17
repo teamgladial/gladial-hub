@@ -23,7 +23,7 @@ html[data-theme="dark"] body.theme-hub .lede,
 html[data-theme="dark"] body.theme-hub .card-description { color: #b4b4aa !important; }
 html[data-theme="dark"] body.theme-hub .card { border-color: #383a33 !important; }
 html[data-theme="dark"] body.theme-hub .card:hover { background: #22241f !important; border-color: #56594e !important; }
-html[data-theme="dark"] body.theme-hub .mark { background: #fff !important; }
+html[data-theme="dark"] body.theme-hub .mark-frame { background: #fff !important; }
 
 html[data-theme="light"] body.theme-labs { background: #f6f6f1 !important; color: #232720 !important; }
 html[data-theme="light"] body.theme-labs header,

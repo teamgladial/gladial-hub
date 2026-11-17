@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#25241f"/><text x="32" y="44" text-anchor="middle" fill="#f7f6f2" font-family="Georgia,serif" font-size="43">G</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><clipPath id="circle"><circle cx="32" cy="32" r="32"/></clipPath></defs><circle cx="32" cy="32" r="32" fill="#fff"/><image href="/gladial-logo.png" x="-8" y="-8" width="80" height="80" preserveAspectRatio="xMidYMid slice" clip-path="url(#circle)"/></svg>
