@@ -1,6 +1,6 @@
 # Gladial Hub
 
-The static front door for Gladial at [gladial.com](https://gladial.com), linking to the Journal, Labs, Audio, and Novels.
+The static front door for Gladial at [gladial.com](https://gladial.com), linking to the Journal, Labs, Music, and Novels.
 
 ## Local development
 
