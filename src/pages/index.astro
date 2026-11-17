@@ -1,10 +1,7 @@
 ---
-const verticals = [
-  { name: 'Tech Blog', url: 'https://blog.gladial.com', description: 'Engineering notes, ideas, and open source work.' },
-  { name: 'Labs', url: 'https://labs.gladial.com', description: 'Open source projects, experiments, and demos.' },
-  { name: 'Music', url: 'https://music.gladial.com', description: 'Original music, releases, and creative experiments.' },
-  { name: 'Novels', url: 'https://novels.gladial.com', description: 'Fiction and long-form storytelling.' },
-];
+import site from '../content/site.json';
+const verticalFiles = import.meta.glob('../content/verticals/*.md', { eager: true });
+const verticals = Object.values(verticalFiles).map((entry) => (entry as any).frontmatter).sort((a, b) => a.order - b.order);
 ---
 <html lang="en">
   <head>
@@ -20,9 +17,9 @@ const verticals = [
     <main>
       <header><img class="mark" src="/gladial-mark.png" alt="Gladial logo" /><span>GLADIAL</span><button class="theme-toggle" data-theme-toggle aria-label="Switch color mode">☾</button></header>
       <section class="intro">
-        <p class="eyebrow">INDEPENDENTLY BUILT · OPEN TO THE WORLD</p>
-        <h1>A home for things<br />made with curiosity.</h1>
-        <p class="lede">Gladial is a personally owned collective for open source projects, experiments, writing, music, and stories.</p>
+        <p class="eyebrow">{site.eyebrow}</p>
+        <h1>{site.headline}</h1>
+        <p class="lede">{site.description}</p>
       </section>
       <section class="grid" aria-label="Explore Gladial">
         {verticals.map((item) => (
