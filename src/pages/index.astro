@@ -11,12 +11,14 @@ const verticals = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/gladial-mark.png" />
+    <link rel="stylesheet" href="/theme.css" />
+    <script is:inline>(() => { const saved = localStorage.getItem('gladial-theme'); document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); window.addEventListener('DOMContentLoaded', () => { const button = document.querySelector('[data-theme-toggle]'); if (!button) return; const sync = () => { const dark = document.documentElement.dataset.theme === 'dark'; button.textContent = dark ? '☀' : '☾'; button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode'); }; sync(); button.addEventListener('click', () => { const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; localStorage.setItem('gladial-theme', next); sync(); }); }); })();</script>
     <meta name="description" content="Gladial is a personally owned collective for open source projects, writing, music, and fiction." />
     <title>Gladial | A creative collective</title>
   </head>
-  <body>
+  <body class="theme-hub">
     <main>
-      <header><img class="mark" src="/gladial-mark.png" alt="Gladial logo" /><span>GLADIAL</span></header>
+      <header><img class="mark" src="/gladial-mark.png" alt="Gladial logo" /><span>GLADIAL</span><button class="theme-toggle" data-theme-toggle aria-label="Switch color mode">☾</button></header>
       <section class="intro">
         <p class="eyebrow">INDEPENDENTLY BUILT · OPEN TO THE WORLD</p>
         <h1>A home for things<br />made with curiosity.</h1>
