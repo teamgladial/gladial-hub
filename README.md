@@ -17,3 +17,7 @@ This is a static Astro site with no server adapter. For Cloudflare Pages, set th
 npm run build
 npm run preview
 ```
+
+## Software license and creative rights
+
+Original software code is licensed under the MIT License in [LICENSE](LICENSE). Original site copy, artwork, and Gladial brand assets remain rights-reserved. See [CONTENT-RIGHTS.md](CONTENT-RIGHTS.md) for scope. Website crawler preferences are in [robots.txt](public/robots.txt).
